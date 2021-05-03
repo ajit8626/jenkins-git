@@ -1,2 +1,2 @@
 jenkins integrated with git
-And Polling of githook done successfully
+And Polling of githook done successfully.
