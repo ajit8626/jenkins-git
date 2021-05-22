@@ -1,3 +1,0 @@
-jenkins integrated with git
-And Polling of githook done successfully.
-xyz
