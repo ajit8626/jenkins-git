@@ -9,16 +9,16 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-
-stages:
-  - stage: Build
-    jobs:
-    - job: FirstJob
-      steps:
-      - bash: echo Build FirstJob
-      - bash: java -version
-      - bash: node --version
-      - bash: python --version 
-      - bash: mvn -version 
-      - bash: ls -R $(System.DefaultWorkingDirectory)
-      - bash: echo $(Build.ArtifactStagingDirectory)
+jobs:
+- job: Job1
+  steps:
+  - script: echo job1 - hello world
+    displayName: 'this is a job-1'
+  - script: |
+      echo this is multiline script
+      echo hello
+- job: Job2
+  dependsOn: Job1
+  steps:
+  - script: echo This is job2
+    displayName: 'this is job2 depends on job1'
